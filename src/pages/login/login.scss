@@ -1,0 +1,32 @@
+.loginheader{
+    font-size: 18px;
+    font-weight: bold;
+}
+.loginbutton{
+    display:flex;
+    justify-content: center;
+}
+ion-grid {
+    height: 100%;
+    background: #EAE7EB;
+}
+.center{
+    border: 1px solid #C8DBFF;
+    background: #ffffff;
+}
+
+ion-row{
+    height: 100%;
+}
+ion-button {
+    font-weight: 300;
+}
+
+@media (max-width: 600px) {
+    ion-grid{
+        background: #ffffff ;
+    }
+    .center {
+        border: none;
+    }
+}

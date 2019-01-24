@@ -1,0 +1,41 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row justify-content-center>
+          <ion-col class='center' align-self-center col-md-7 col-lg-6 col-xs-12>
+            <ion-item no-lines>
+              <ion-label class='loginheader' text-center>Please Login Here</ion-label>
+            </ion-item>
+            <div padding>
+              <ion-item>
+                <ion-label>Username</ion-label>
+                <ion-input [(ngModel)]='username' name="username" type="text">
+                </ion-input>
+              </ion-item>
+    
+              <ion-item>
+                <ion-label>Password</ion-label>
+                <ion-input [(ngModel)]='password' name="password" type="password"></ion-input>
+              </ion-item>
+            </div>
+            <div class='loginbutton'>
+              <button ion-button (click)="login()">Login</button>
+              <button ion-button outline (click)="toReg()">Register</button>
+            </div>
+            <ion-item *ngIf='showFailed'>
+              <ion-label text-center>Incorrect Login Information</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>
+    
