@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserServiceProvider } from '../../providers/user-service/user-service';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -12,21 +13,22 @@ export class LoginPage {
   email: "",
   password: ""
  }
-  results;
+  // results;
 
-  constructor( /*public _user: UserServiceProvider*/ 
+  constructor( public _user: UserServiceProvider, 
     public navCtrl: NavController, public navParams: NavParams) {
    this.login
   }
 
-  // getLogin () {
-  //   this._user.getLogin(this.login)
-  //   .subscribe((response: any) => { 
-  //     this.results = response;
-  //     window.sessionStorage.setItem('token', response.token);
-  //     window.sessionStorage.setItem('userId', response.userId);
-  //   })
-  // }
+  getLogin () {
+    this._user.getLogin(this.login)
+    .subscribe((response: any) => { 
+      // this.results = response;
+      window.sessionStorage.setItem('token', response.token);
+      window.sessionStorage.setItem('userId', response.userId);
+      this.navCtrl.setRoot(HomePage)
+    })
+  }
 
   toReg () {
     this.navCtrl.parent.select(2);

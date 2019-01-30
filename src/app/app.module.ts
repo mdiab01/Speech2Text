@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { TabPage } from '../pages/tab/tab';
 import { UserServiceProvider } from '../providers/user-service/user-service';
+import { SpeechRecognitionOriginal } from '@ionic-native/speech-recognition';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
   providers: [
     StatusBar,
     SplashScreen,
+    SpeechRecognitionOriginal,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider
   ]
