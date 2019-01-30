@@ -1,18 +1,44 @@
-<!--
-  Generated template for the RegisterPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>register</ion-title>
+    <ion-title>Register</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col class='center' align-self-center col-md-7 col-lg-6 col-xs-12>
+        <ion-item no-lines>
+          <ion-label class='loginheader' text-center>Register Here</ion-label>
+        </ion-item>
+        <div padding>
+            <ion-item>
+              <ion-label>First Name</ion-label>
+              <ion-input [(ngModel)]='firstname' name="firstname" type="text"></ion-input>
+            </ion-item>
 
+            <ion-item>
+              <ion-label>Last Name</ion-label>
+              <ion-input [(ngModel)]='lastname' name="lastname" type="text"></ion-input>
+            </ion-item>
+
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input [(ngModel)]='email' name="email" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input [(ngModel)]='password' name="password" type="password"></ion-input>
+          </ion-item>
+        </div>
+        <div class='loginbutton'>
+          <button ion-button (click)="register()">Register</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

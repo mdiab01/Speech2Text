@@ -1,5 +1,7 @@
 {
   "name": "Speech2Text",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

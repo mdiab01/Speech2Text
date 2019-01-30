@@ -8,19 +8,30 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  username;
-  password;
-  showfailed = false;
+ login = {
+  email: "",
+  password: ""
+ }
+  results;
 
-  constructor( public _user: UserServiceProvider, 
+  constructor( /*public _user: UserServiceProvider*/ 
     public navCtrl: NavController, public navParams: NavParams) {
-    this.username = '';
-    this.password = '';
+   this.login
   }
 
-  login () {
-     
+  // getLogin () {
+  //   this._user.getLogin(this.login)
+  //   .subscribe((response: any) => { 
+  //     this.results = response;
+  //     window.sessionStorage.setItem('token', response.token);
+  //     window.sessionStorage.setItem('userId', response.userId);
+  //   })
+  // }
+
+  toReg () {
+    this.navCtrl.parent.select(2);
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
