@@ -17,7 +17,6 @@ export class LoginPage {
 
   constructor( public _user: UserServiceProvider, 
     public navCtrl: NavController, public navParams: NavParams) {
-   this.login
   }
 
   getLogin () {

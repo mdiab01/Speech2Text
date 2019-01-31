@@ -17,26 +17,26 @@
         <div padding>
             <ion-item>
               <ion-label>First Name</ion-label>
-              <ion-input [(ngModel)]='firstName' name="firstName" type="text"></ion-input>
+              <ion-input input [(ngModel)] = "register.firstName" name="first" class="first" type="text" id="register_first"></ion-input>
             </ion-item>
 
             <ion-item>
               <ion-label>Last Name</ion-label>
-              <ion-input [(ngModel)]='lastName' name="lastName" type="text"></ion-input>
+              <ion-input input [(ngModel)] = "register.lastName" name="last" class="last" type="text" id="register_last"></ion-input>
             </ion-item>
 
           <ion-item>
             <ion-label>Email</ion-label>
-            <ion-input [(ngModel)]='email' name="email" type="text"></ion-input>
+            <ion-input input [(ngModel)] = "register.email" name="email" class="email" type="text" id="register_email"></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-label>Password</ion-label>
-            <ion-input [(ngModel)]='password' name="password" type="password"></ion-input>
+            <ion-input [(ngModel)] = "register.password" name="password" class="password" type="password" id="register_password"></ion-input>
           </ion-item>
         </div>
         <div class='loginbutton'>
-          <button ion-button (click)="register()">Register</button>
+          <button ion-button (click)="getRegister()">Register</button>
         </div>
       </ion-col>
     </ion-row>

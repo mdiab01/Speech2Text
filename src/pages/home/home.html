@@ -1,24 +1,34 @@
 <ion-header>
-  <ion-navbar [color]="isRecording ? 'danger' : 'primary'">
+  <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Text To Speech
     </ion-title>
   </ion-navbar>
 </ion-header>
-
+ 
 <ion-content padding>
-  <button ion-button full (click)= "getPermissions()">Get Permissions</button>
-  <button ion-button full (click)= "startListening()">Start Listening</button>
-  <button ion-button full (click)= "stopListening()" *ngIf="isIos()">Stop Listening</button>
-
-  <ion-card>
-    <ion-card-header>  This is what I understood... </ion-car-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-item *ngFor="let match of matches">
-          {{ match }}
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
+  <ion-list>
+    <!--Text-->
+    <ion-item>
+      <ion-label>Text</ion-label>
+      <ion-input [(ngModel)]="text"></ion-input>
+    </ion-item>
+    <!--Rate-->
+    <ion-item>
+      <ion-range min="1" max="30" step="1" [(ngModel)]="rate">
+        <ion-icon small range-left name="remove"></ion-icon>
+        <ion-icon small range-right name="add"></ion-icon>
+      </ion-range>
+    </ion-item>
+    <!--Language-->
+    <ion-item>
+      <ion-label>Language</ion-label>
+      <ion-select [(ngModel)]="locale">
+        <ion-option value="ru_RU">Russian</ion-option>
+        <ion-option value="en-US">English</ion-option>
+      </ion-select>
+    </ion-item>
+    <!--Play text-->
+    <button ion-button full (click)="playText()">Play Text</button>
+  </ion-list>
 </ion-content>

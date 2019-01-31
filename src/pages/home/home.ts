@@ -1,21 +1,30 @@
 import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
-import { SpeechRecognition } from '@ionic-native/speech-recognition';
-import { ChangeDetectorRef } from '@angular/core';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  matches: String[];
-  isRecording = false;
-  constructor(public navCtrl: NavController, private speechRecognition: SpeechRecognition,private plt: Platform, private cd: ChangeDetectorRef) {
+  text: string;
+  rate: number;
+  locale: string;
 
+  constructor(public navCtrl: NavController, private textToSpeech: TextToSpeech, private plt: Platform, private tts: TextToSpeech) {
+    this.text = '';
+    this.rate = 1;
+    this.locale = 'en-US';
   }
 
-  isIos() {
-    return this.plt.is('ios');
+  playText() {
+    this.tts.speak({
+      text: this.text,
+      rate: this.rate / 10,
+      locale: this.locale
+    })
+      .then(() => console.log('Success'))
+      .catch((reason: any) => console.log(reason));
   }
 
 }

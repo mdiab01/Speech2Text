@@ -10,7 +10,8 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { TabPage } from '../pages/tab/tab';
 import { UserServiceProvider } from '../providers/user-service/user-service';
-import { SpeechRecognitionOriginal } from '@ionic-native/speech-recognition';
+import { HttpClientModule } from '@angular/common/http';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SpeechRecognitionOriginal } from '@ionic-native/speech-recognition';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -35,7 +37,7 @@ import { SpeechRecognitionOriginal } from '@ionic-native/speech-recognition';
   providers: [
     StatusBar,
     SplashScreen,
-    SpeechRecognitionOriginal,
+    TextToSpeech,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider
   ]
